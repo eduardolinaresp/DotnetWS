@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="79dec21d-f039-4773-b576-63c2bbe871d7" activeEnvironment="Default" name="DotnetWS" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b1cb53f4-a4d2-42ba-a733-9f7c68ee8ac2" wsaVersion="NONE" name="WebService1Soap12" type="wsdl" bindingName="{http://tempuri.org/}WebService1Soap12" soapVersion="1_2" anonymous="optional" definition="https://localhost:44358/WebService1.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://localhost:44358/WebService1.asmx</con:endpoint></con:endpoints><con:operation id="5e1feac5-990c-45a4-9184-529dbadc8f5f" isOneWay="false" action="http://tempuri.org/HelloWorld" name="HelloWorld" bindingOperationName="HelloWorld" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a1c8cea0-66dd-49a1-ae7c-abcb21aa6356" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:44358/WebService1.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:HelloWorld/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/WebService1Soap/HelloWorldRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="21577992-2506-4ba8-aabd-2fe2d5bf9363" wsaVersion="NONE" name="WebService1Soap" type="wsdl" bindingName="{http://tempuri.org/}WebService1Soap" soapVersion="1_1" anonymous="optional" definition="https://localhost:44358/WebService1.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://localhost:44358/WebService1.asmx?WSDL"><con:part><con:url>https://localhost:44358/WebService1.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType/>
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld"/>
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn"/>
+      <wsdl:output message="tns:HelloWorldSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44358/WebService1.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44358/WebService1.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://localhost:44358/WebService1.asmx</con:endpoint></con:endpoints><con:operation id="839261f6-e2b3-43f0-9c58-72057c78aa78" isOneWay="false" action="http://tempuri.org/HelloWorld" name="HelloWorld" bindingOperationName="HelloWorld" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dfc72330-a286-4874-afed-613719084913" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:44358/WebService1.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:HelloWorld/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/HelloWorld"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
